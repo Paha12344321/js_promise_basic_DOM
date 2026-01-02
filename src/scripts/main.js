@@ -30,7 +30,7 @@ promise1.catch(function () {
   const errorDiv = document.createElement('div');
 
   errorDiv.className = 'message error-message';
-  errorDiv.textContent = 'Promise 1 was rejected!';
+  errorDiv.textContent = 'Promise was rejected!';
   document.body.appendChild(errorDiv);
 });
 
@@ -39,7 +39,7 @@ promise2.then(function () {
   const messageDiv = document.createElement('div');
 
   messageDiv.className = 'message';
-  messageDiv.textContent = 'Promise 2 was resolved!';
+  messageDiv.textContent = 'Promise was resolved!';
   document.body.appendChild(messageDiv);
 });
 
