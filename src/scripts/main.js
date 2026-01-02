@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 const logo = document.querySelector('.logo');
 
-const promise1 = new Promise(function (resolve) {
+const promise1 = new Promise(function (resolve, reject) {
   logo.addEventListener('click', function () {
     resolve();
   });
@@ -16,6 +16,7 @@ const promise2 = new Promise(function (resolve, reject) {
   }, 3000);
 });
 
+// promise1 — УСПЕХ
 promise1.then(function () {
   const messageDiv = document.createElement('div');
 
@@ -24,6 +25,25 @@ promise1.then(function () {
   document.body.appendChild(messageDiv);
 });
 
+// promise1 — ОШИБКА
+promise1.catch(function () {
+  const errorDiv = document.createElement('div');
+
+  errorDiv.className = 'message error-message';
+  errorDiv.textContent = 'Promise 1 was rejected!';
+  document.body.appendChild(errorDiv);
+});
+
+// promise2 — УСПЕХ
+promise2.then(function () {
+  const messageDiv = document.createElement('div');
+
+  messageDiv.className = 'message';
+  messageDiv.textContent = 'Promise 2 was resolved!';
+  document.body.appendChild(messageDiv);
+});
+
+// promise2 — ОШИБКА
 promise2.catch(function () {
   const errorMessageDiv = document.createElement('div');
 
